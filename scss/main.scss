@@ -1,0 +1,76 @@
+@import './resets';
+@import './variables';
+
+@function weight($weight-name) {
+    @return map-get($font-weights, $weight-name);
+}
+
+body {
+    color: $primary-color;
+    background: #ff0;
+}
+
+.main {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+
+    #{&}__paragraph {
+        font-weight: weight(regular);
+        &:hover {
+            color: pink
+        }
+    }
+}
+
+.is-mono {
+    font-family: monospace;
+}
+
+.button{
+    font-family: monospace;
+    padding: 3px;
+    border: solid 2px;
+    text-decoration: none;
+    box-sizing: content-box;
+    width: 1em;
+    height: 1em;
+    text-align: center;
+    font-size: 1em;
+}
+
+.big-button{
+    @extend .button;
+    font-size: 2em;
+    width: 2.5em;
+    height: 2.5em;
+}
+
+.is-blackened {
+    background-color: #666;
+    color: black;
+    border: solid 2px black;
+}
+
+.is-option {
+    background-color: #0f0;
+    color: #fff;
+    border: solid 2px #0c0;
+}
+
+.is-invalid {
+    background-color: #f00;
+    color: #fff;
+    border: solid 2px #c00;
+}
+
+.is-wide {
+    padding-left: 6px;
+    padding-right: 6.5px;
+}
+
+.is-tall {
+    padding-bottom: 6px;
+}

@@ -13,3 +13,4 @@ yew = "0.19.3"
 yew-hooks = "0.1.56"
 yew-router = "0.16.0"
 yew-stdweb = "0.18.0"
+golfscript-rs = { path = "../golfscript-rs" }

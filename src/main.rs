@@ -1,10 +1,41 @@
 use yew::prelude::*;
 use list_component::ListComponent;
+use web_sys::{HtmlInputElement,HtmlElement,Element};
+use golfscript_rs::golfscript;
 
 mod list_component;
 
+
 #[function_component(App)]
 fn app() -> Html {
+    let code = use_state(String::new);
+    let input = use_state(String::new);
+    let input_ref_for_code: NodeRef = NodeRef::default();
+    let input_ref_for_input: NodeRef = NodeRef::default();
+    
+    let on_input_for_code = {
+        let code = code.clone();
+        let input = input.clone();
+        let cur_input = input_ref_for_code.clone();
+        Callback::from(move |_e:InputEvent| {
+            let input_element = cur_input.cast::<HtmlInputElement>().unwrap();
+            let new_code = input_element.value();
+            let golf = golfscript(input.to_string(),new_code.clone());
+            code.set(golf);
+        })
+    };
+    let on_input_for_input = {
+        let code = code.clone();
+        let input = input.clone();
+        let cur_input_for_input = input_ref_for_input.clone();
+        Callback::from(move |_e:InputEvent| {
+            let input_element = cur_input_for_input.cast::<HtmlInputElement>().unwrap();
+            let new_input = input_element.value();
+            let golf = golfscript(new_input.clone(),code.to_string());
+            code.set(golf);
+        })
+    };
+
     html! {
     <body>
         <div class="sidenav">
@@ -16,7 +47,9 @@ fn app() -> Html {
             </div>
         </div>
         <div class="main">
-            <textarea class="textarea" placeholder="e.g. Hello world" rows="1"></textarea>
+            <textarea class="textarea" ref={input_ref_for_input} oninput={on_input_for_input} placeholder="Input" rows="1"></textarea>
+            <textarea class="textarea" ref={input_ref_for_code} oninput={on_input_for_code} placeholder="Code" rows="1"></textarea>
+            <p>{code.clone().as_str()}</p>
             <div class="action-container is-basic">
                 <div class="action-grid-symbol">
                     <button class="big-button is-option is-family-monospace">{"~"}</button>

@@ -1,0 +1,162 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: #272727;
+  background: #ff0;
+}
+
+.sidenav {
+  height: 100%;
+  width: 12%;
+  position: fixed;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  background-color: #f5f5f5;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.main {
+  margin-left: 12%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 75%;
+  margin: 0 auto;
+}
+.main .main__paragraph {
+  font-weight: 400;
+}
+.main .main__paragraph:hover {
+  color: pink;
+}
+
+.textarea {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #272727;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #272727;
+  background: #f5f5f5;
+}
+
+.is-mono {
+  font-family: monospace;
+}
+
+.button, .big-button {
+  font-family: monospace;
+  padding: 3px;
+  border: solid 2px;
+  text-decoration: none;
+  box-sizing: content-box;
+  width: 1em;
+  height: 1em;
+  text-align: center;
+  font-size: 1em;
+}
+
+.big-button {
+  text-shadow: 0.5px 2px 0 #000, 2px 2px 0 #000;
+  font-size: 2.5em;
+  width: 2em;
+  height: 2em;
+}
+
+.is-blackened {
+  background-color: #666;
+  color: black;
+  border: solid 2px black;
+}
+
+.is-option {
+  background-color: #0f0;
+  color: #fff;
+  border: solid 2px #0c0;
+}
+
+.is-invalid {
+  background-color: #f00;
+  color: #fff;
+  border: solid 2px #c00;
+}
+
+.is-basic {
+  background-color: #888;
+  color: #000;
+  border: solid 2px #000;
+}
+
+.is-wide {
+  padding-left: 6px;
+  padding-right: 6.5px;
+}
+
+.is-tall {
+  padding-bottom: 6px;
+}
+
+.action-grid-symbol {
+  grid-area: symbol;
+}
+.action-grid-access1 {
+  grid-area: access1;
+}
+.action-grid-access2 {
+  grid-area: access2;
+}
+.action-grid-access3 {
+  grid-area: access3;
+}
+.action-grid-access4 {
+  grid-area: access4;
+}
+.action-grid-script {
+  grid-area: script;
+}
+
+.action-container {
+  display: grid;
+  grid-template-columns: 5em 60% 1fr;
+  grid-template-areas: "symbol access1 script" "symbol access2 script" "symbol access3 script";
+  grid-gap: 0;
+  justify-items: start;
+  justify-content: stretch;
+  align-items: stretch;
+  width: 50%;
+  height: 10%;
+  margin: 0 auto;
+}
+
+.action-container > div {
+  background-color: #888;
+  text-align: center;
+  padding: 0px;
+}
+
+.playpause label {
+  display: block;
+  box-sizing: border-box;
+  width: 0;
+  height: 74px;
+  cursor: pointer;
+  border-color: transparent transparent transparent #202020;
+  transition: 100ms all ease;
+  will-change: border-width;
+  border-style: double;
+  border-width: 0px 0 0px 60px;
+}
+.playpause input[type=checkbox] {
+  visibility: hidden;
+}
+.playpause input[type=checkbox]:checked + label {
+  border-style: solid;
+  border-width: 37px 0 37px 60px;
+}/*# sourceMappingURL=main.css.map */

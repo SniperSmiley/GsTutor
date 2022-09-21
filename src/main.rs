@@ -47,7 +47,7 @@ fn app() -> Html {
 
     html! {
     <body>
-        <div class="sidenav">
+        <div class="sidenavleft">
             <div>
                 <a>{"Fibbinacci"}</a>
             </div>
@@ -56,13 +56,13 @@ fn app() -> Html {
             </div>
         </div>
         <div class="main">
-            <div>
-                <textarea class="textarea" ref={input_ref_for_input} oninput={on_input_for_input} placeholder="Input" rows="1"></textarea>
-                <textarea class="textarea" ref={input_ref_for_code} oninput={on_input_for_code} placeholder="Code" rows="1"></textarea>
-
-                <p>{(*output).clone()}</p>
-            </div>
-            <div class="action-container is-basic">
+            <textarea class="textarea" ref={input_ref_for_input} oninput={on_input_for_input} placeholder="Input" rows="1"></textarea>
+            <textarea class="textarea" ref={input_ref_for_code} oninput={on_input_for_code} placeholder="Code" rows="1"></textarea>
+        
+            <p>{(*output).clone()}</p>
+        </div>
+        <div class="sidenavright">
+            <div class="action-container">
                 <div class="action-grid-symbol">
                     <button class="big-button is-option is-mono">{"~"}</button>
                 </div>
@@ -87,14 +87,73 @@ fn app() -> Html {
                     <button class="button is-option">{"[]"}</button>
                     {"Dump"}            
                 </div>
-                <div class="action-grid-script">{"lala"}</div>
             </div>
-            <div>
-                
+            <div class="action-container">
+                <div class="action-grid-symbol">
+                    <button class="big-button is-invalid">{"`"}</button>
+                </div>
             </div>
-            <div>
+            <div class="action-container">
+                <div class="action-grid-symbol">
+                    <button class="big-button is-invalid">{"`"}</button>
+                </div>
             </div>
-            <button class="big-button is-invalid">{"`"}</button>
+            <div class="action-container">
+                <div class="action-grid-symbol">
+                    <button class="big-button is-invalid">{"`"}</button>
+                </div>
+            </div>
+            <div class="action-container">
+                <div class="action-grid-symbol">
+                    <button class="big-button is-invalid">{"`"}</button>
+                </div>
+            </div>
+            <div class="action-container">
+                <div class="action-grid-symbol">
+                    <button class="big-button is-invalid">{"`"}</button>
+                </div>
+            </div>
+            <div class="action-container">
+                <div class="action-grid-symbol">
+                    <button class="big-button is-invalid">{"`"}</button>
+                </div>
+            </div>
+            <div class="action-container">
+                <div class="action-grid-symbol">
+                    <button class="big-button is-invalid">{"`"}</button>
+                </div>
+            </div>
+            <div class="action-container">
+                <div class="action-grid-symbol">
+                    <button class="big-button is-invalid">{"`"}</button>
+                </div>
+            </div>
+            <div class="action-container">
+                <div class="action-grid-symbol">
+                    <button class="big-button is-invalid">{"`"}</button>
+                </div>
+            </div>
+            <div class="action-container">
+                <div class="action-grid-symbol">
+                    <button class="big-button is-invalid">{"`"}</button>
+                </div>
+            </div>
+            <div class="action-container">
+                <div class="action-grid-symbol">
+                    <button class="big-button is-invalid">{"`"}</button>
+                </div>
+            </div>
+            <div class="action-container">
+                <div class="action-grid-symbol">
+                    <button class="big-button is-invalid">{"`"}</button>
+                </div>
+            </div>
+            <div class="action-container">
+                <div class="action-grid-symbol">
+                    <button class="big-button is-invalid">{"`"}</button>
+                </div>
+            </div>
+            
         </div>
     </body>
     }

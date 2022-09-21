@@ -10,7 +10,7 @@ body {
     background: #ff0;
 }
 
-.sidenav {
+.sidenavleft {
     height: 100%;
     width: 12%;
     position: fixed;
@@ -21,14 +21,27 @@ body {
     overflow-x: hidden;
     padding-top: 20px;
 }
+.sidenavright {
+    height: 100%;
+    width: 40%;
+    position: fixed;
+    z-index: 0;
+    top: 0;
+    right: 0;
+    background-color: $accent-color;
+    overflow-x: hidden;
+    padding-top: 20px;
+    background-color: #888;
+}
 
 .main {
-    margin-left: 12%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 75%;
     margin: 0 auto;
+    margin-left: 12%;
+    margin-right: 40%;
+    left: 0;
+    justify-content: left;
+    align-items: left;
+    width: 48%;
 
     #{&}__paragraph {
         font-weight: weight(regular);
@@ -116,17 +129,18 @@ body {
 }
 .action-container {
     display: grid;
-    grid-template-columns: 5em 60% 1fr;
+    grid-template-columns: 5em 88% 5em;
+    grid-template-rows: 33% 33% 33%;
     grid-template-areas:
-        "symbol access1 script"
-        "symbol access2 script"
-        "symbol access3 script";
+        "symbol access1"
+        "symbol access2"
+        "symbol access3";
     grid-gap: 0;
     justify-items: start;
     justify-content: stretch;
     align-items: stretch;
-    width: 50%;
-    height: 10%;
+    width: 100%;
+    height: 5em;
     margin: 0 auto;
 }
 
